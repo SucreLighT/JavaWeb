@@ -11,8 +11,8 @@ import java.io.IOException;
  * @description
  */
 
-//使用注解方式配置Servlet
-@WebServlet("/ServletDemo")
+
+@WebServlet("/demo1")
 public class ServletDemo implements Servlet {
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
