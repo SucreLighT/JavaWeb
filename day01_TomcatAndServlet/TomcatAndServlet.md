@@ -78,3 +78,12 @@
     * HttpServlet：是Servlet对http协议的一种封装，更加简化操作
         只需要定义类继承HttpServlet并复写doGet/doPost方法即可
         工作原理：浏览器发送七种请求，其中主要是get和post，Servlet根据req.getMethod()判断请求类型并执行相应的doGet/doPost方法   
+        
+## 浏览器的请求消息格式
+    * 浏览器请求网页时将向服务器发送请求消息
+        消息格式主要包括：
+        1. 请求行： 请求方式 请求url 请求协议/版本 如： GET /login.html HTTP/1.1      
+        2. 请求头：包含浏览器告诉服务器的相关信息，常用的有User-Agent和Referer
+        3. 请求空行：用于POST方法中隔离请求头和请求体，GET方法中不存在请求体
+        4. 请求体：封装POST请求消息的请求参数
+                      
