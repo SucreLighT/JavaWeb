@@ -86,4 +86,29 @@
         2. 请求头：包含浏览器告诉服务器的相关信息，常用的有User-Agent和Referer
         3. 请求空行：用于POST方法中隔离请求头和请求体，GET方法中不存在请求体
         4. 请求体：封装POST请求消息的请求参数
-                      
+        5. 示例：
+            POST /login.html  HTTP/1.1
+            Host: localhost
+            User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0
+            Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+            Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+            Accept-Encoding: gzip, deflate
+            Referer: http://localhost/login.html
+            Connection: keep-alive
+            Upgrade-Insecure-Requests: 1
+            
+            username=zhangsan
+     
+ ## Request对象
+    * 用来获取请求消息
+        1. 获取请求行数据：
+            getContextPath()获取虚拟目录，
+            getRequstURI()获取请求的统一资源标志符，/day01/RequestDemo1
+            getRequestURL()获取请求的统一资源定位符，http://localhost:8080/day01/RequestDemo1
+        2. 获取请求体数据
+            getHeader(String name):通过请求头的名称获取对应的值
+        3. 获取请求体数据
+            只有POST方式有请求体，在POST的方式中将请求体封装成流对象
+            首先要获取流对象，其次从流对象中获取数据
+            getReader()：获取字符输入流，只能操作字符数据
+            getInputStream()：获取字节输入流，可以操作所有类型数据
