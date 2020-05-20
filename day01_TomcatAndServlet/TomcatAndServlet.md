@@ -112,3 +112,8 @@
             首先要获取流对象，其次从流对象中获取数据
             getReader()：获取字符输入流，只能操作字符数据
             getInputStream()：获取字节输入流，可以操作所有类型数据
+        4. 通用获取参数 不论GET和POST都可用
+            String getParameter(String name):根据参数名称获取参数值    username=zs&password=123
+            String[] getParameterValues(String name):根据参数名称获取参数值的数组  hobby=xx&hobby=game
+            Enumeration<String> getParameterNames():获取所有请求的参数名称
+            Map<String,String[]> getParameterMap():获取所有参数的map集合
