@@ -4,10 +4,10 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="day01_TomcatAndServlet" />
+          <element id="module-output" name="day01_ServletRequest" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="day01_TomcatAndServlet/web/Web" />
+      <element id="javaee-facet-resources" facet="day01_ServletRequest/web/Web" />
     </root>
   </artifact>
 </component>

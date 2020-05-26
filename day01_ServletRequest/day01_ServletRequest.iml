@@ -19,8 +19,8 @@
     <output url="file://$MODULE_DIR$/../day01_TomcatAndServlet/web/WEB-INF/classes" />
     <output-test url="file://$MODULE_DIR$/../day01_TomcatAndServlet/web/WEB-INF/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../day01_TomcatAndServlet">
-      <sourceFolder url="file://$MODULE_DIR$/../day01_TomcatAndServlet/src" isTestSource="false" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
