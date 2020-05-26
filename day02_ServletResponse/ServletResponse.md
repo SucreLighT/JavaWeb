@@ -23,7 +23,7 @@
         3. 响应空行
         4. 响应体:传输的数据
         
- ## Response对象
+## Response对象
     * 用来设置响应消息格式
         1. 设置响应行的状态码 setStatus(int sc)
         2. 设置响应头数据：setHeader(String name, String value) 
@@ -35,7 +35,7 @@
                     字符输出流：PrintWriter getWriter()
                     字节输出流：ServletOutputStream getOutputStream()
                 2. 使用输出流将数据输出到浏览器
- ## 案例
+## 案例
     * 重定向
         1. 简单的重定向方法
             response.sendRedirect("/day15/responseDemo2");
@@ -54,5 +54,18 @@
             规则：判断路径是给谁用的？判断请求将来从哪儿发出
             * 给客户端浏览器使用：需要加虚拟目录 /
             * 给服务器使用：不需要加虚拟目录，如转发路径
-        4. 建议使用request.getContextPath()动态获取虚拟目录   
+        4. 建议使用request.getContextPath()动态获取虚拟目录
+
+
+## ServletContext对象
+    代表整个web应用，可以和程序的容器(服务器)来通信
+    1. 使用request.getServletContext();或者this.getServletContext();获取该对象
+    2. 功能：
+        1. 获取MIME类型：String getMimeType(String file)  
+        2. 域对象：共享数据 setAttribute(String name,Object value)，getAttribute(String name)，removeAttribute(String name)
+        3. 获取文件的真实(服务器)路径 String getRealPath(String path)
+           String b = context.getRealPath("/b.txt");//web目录下资源访问
+           String c = context.getRealPath("/WEB-INF/c.txt");//WEB-INF目录下的资源访问
+           String a = context.getRealPath("/WEB-INF/classes/a.txt");//src目录下的资源访问
+               
         
