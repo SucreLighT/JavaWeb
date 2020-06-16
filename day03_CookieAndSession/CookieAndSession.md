@@ -32,3 +32,16 @@
     + 浏览器对于单个cookie的大小有限制(4kb)以及对同一个域名下的总cookie数量也有限制(20个)
     + cookie一般用于存储少量的不太敏感的数据
     + 在不登录的情况下，cookie用于完成服务器对客户端的身份识别
+    
+## JSP
+1. JSP文件在调用时，会被转换成.java文件然后编译成为字节码文件，之后返回给客户端
+2. JSP本质上是一个Servlet类，对应的.java文件继承了HttpJspBase这个类，该类继承了HttpServlet
+3. JSP定义java代码的方式
+    + <%  代码 %>：定义的java代码，在service方法中。service方法中可以定义什么，该脚本中就可以定义什么。
+    + <%! 代码 %>：定义的java代码，在jsp转换后的java类的成员位置，成员变量、成员方法、代码块，用得少。
+    + <%= 代码 %>：定义的java代码，会输出到页面上。输出语句中可以定义什么，该脚本中就可以定义什么。
+4. JSP中的内置对象，不需要创建和获取，直接可以使用
+    + 一个有九个 request，response，out等
+    + response.getWriter()和out.write()的区别：
+      在tomcat服务器真正给客户端做出响应之前，会先找response缓冲区数据，再找out缓冲区数据。
+      response.getWriter()数据输出永远在out.write()之前
