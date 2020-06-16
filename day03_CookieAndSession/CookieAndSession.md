@@ -45,3 +45,30 @@
     + response.getWriter()和out.write()的区别：
       在tomcat服务器真正给客户端做出响应之前，会先找response缓冲区数据，再找out缓冲区数据。
       response.getWriter()数据输出永远在out.write()之前
+      
+## Session
+1. Session在一次会话的多次请求间共享数据
+2. 实现依赖于cookie
+    + 在第一次访问服务器时，服务器内存中没有session对象，创建对象
+    + 向客户端发送相应数据时，set-cookie中包含JSESSIONID，即为服务器内存中该对象的id
+    + 客户端将cookie信息存储到浏览器内部，下次访问服务器时，请求头中cookie中将包含该JSESSIONID
+    保证了多次请求中共享相同的session对象
+3. 客户端浏览器关闭后，服务器不关闭，则会话已经结束，再次打开浏览器后两次获取的session不相同。
+    + 可以创建cookie，设置键JSESSIONID的存活时间（setMaxAge），使其持久化就可保证两次相同。
+4. session的销毁
+    + 服务器关闭
+    + session对象调用invalidate()
+    + 默认失效时间为 30分钟，在tomcat设置中可以配置
+5. session与Cookie区别
+    + session存储在服务器端，cookie存储在客户端
+    + session没有数据大小限制，cookie有限制
+    + session相对安全，cookie相对不安全
+    
+    
+## 案例：验证码
+案例需求：
+1. 访问带有验证码的登录页面login.jsp
+2. 用户输入用户名，密码以及验证码。
+	+ 如果用户名和密码输入有误，跳转登录页面，提示:用户名或密码错误
+    + 如果验证码输入有误，跳转登录页面，提示：验证码错误
+    + 如果全部输入正确，则跳转到主页success.jsp，显示：用户名,欢迎您
