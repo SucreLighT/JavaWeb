@@ -57,4 +57,18 @@
     + 获取对象的值${域名称.键名.属性名}其本质上会去调用属性的getter方法，如果不存在getter方法则无法获取。
     + 获取List集合中的值：${域名称.键名[索引]}
     + 获取Map集合中的值：${域名称.键名.key名称}或者${域名称.键名["key名称"]}
-    
+ 
+ ## JSTL JSP标准标签库
+ 1. 简化和替换JSP页面上的java代码
+ 2. 使用步骤：
+    + 导入jstl相关jar包
+    + 引入标签库：taglib指令：  <%@ taglib %>
+    + 使用标签
+ 3. if标签 相当于if语句
+    + test必须属性，接受boolean表达式，如果为true则显示标签体内容
+ 4. choose:相当于java代码的switch语句
+    + 使用choose标签声明         			相当于switch声明
+    + 使用when标签做判断         			相当于case
+    + 使用otherwise标签做其他情况的声明    	相当于default
+ 
+ 5. foreach:相当于java代码的for语句

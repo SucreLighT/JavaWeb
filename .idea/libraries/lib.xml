@@ -2,6 +2,7 @@
   <library name="lib">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../../tomcat/apache-tomcat-8.5.54/lib" />
+      <root url="jar://$PROJECT_DIR$/../../java-jar/taglibs-standard-impl-1.2.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
