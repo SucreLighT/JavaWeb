@@ -13,4 +13,7 @@ public interface UserService {
      * @return
      */
     public List<User> findAll();
+
+	User login(User user);
+
 }
