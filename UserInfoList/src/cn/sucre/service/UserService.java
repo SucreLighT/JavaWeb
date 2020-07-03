@@ -14,6 +14,16 @@ public interface UserService {
      */
     public List<User> findAll();
 
+	/**
+	 * 用户登录
+	 * @param user
+	 * @return
+	 */
 	User login(User user);
 
+	/**
+	 * 增加用户信息
+	 * @param user
+	 */
+	void addUser(User user);
 }
