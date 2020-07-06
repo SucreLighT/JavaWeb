@@ -28,6 +28,21 @@
             text-align: center;
         }
     </style>
+
+    <script>
+        /**
+         * 用于点击删除按钮是显示提示框
+         * @param id
+         */
+        function deleteUser(id) {
+
+            if(confirm("确定是否删除该记录？")){
+                location.href="${pageContext.request.contextPath}/DelUserServlet?id="+id;
+            }
+        }
+
+    </script>
+
 </head>
 <body>
 <div class="container">
@@ -84,7 +99,9 @@
                 <td>${user.address}</td>
                 <td>${user.qq}</td>
                 <td>${user.email}</td>
-                <td><a class="btn btn-default btn-sm" href="update.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="">删除</a></td>
+                <td>
+                    <a class="btn btn-default btn-sm" href="update.html">修改</a>&nbsp;
+                    <a class="btn btn-default btn-sm" href="javascript:deleteUser(${user.id});">删除</a></td>
             </tr>
 
         </c:forEach>
