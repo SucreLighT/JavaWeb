@@ -32,4 +32,17 @@ public interface UserService {
 	 * @param id
 	 */
 	void deleteUser(String id);
+
+	/**
+	 * 根据id查询用户并获取该对象
+	 * @param id
+	 * @return
+	 */
+	User findUserById(String id);
+
+	/**
+	 * 修改用户信息
+	 * @param user
+	 */
+	void updateUser(User user);
 }

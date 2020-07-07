@@ -34,4 +34,17 @@ public interface UserDao {
 	 * @param parseInt
 	 */
 	void deleteUser(int parseInt);
+
+	/**
+	 * 根据id查找用户
+	 * @param parseInt
+	 * @return
+	 */
+	User findById(int parseInt);
+
+	/**
+	 * 修改用户信息
+	 * @param user
+	 */
+	void updateUser(User user);
 }
