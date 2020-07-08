@@ -35,7 +35,6 @@
              * @param id
              */
             function deleteUser(id) {
-
                 if (confirm("确定是否删除该记录？")) {
                     location.href = "${pageContext.request.contextPath}/DelUserServlet?id=" + id;
                 }
@@ -46,22 +45,21 @@
              */
             window.onload = function () {
                 document.getElementById("delSelected").onclick = function () {
-                    if(confirm("确定删除选中的记录吗？")){
+                    if (confirm("确定删除选中的记录吗？")) {
                         // 判断是否存在选中条目，如果存在任意一个或多个，则指定提交表单操作
                         var flag = false;
                         var cbs = document.getElementsByName("uid");
-                        for (var i = 0; i < cbs.length; i++){
-                             if(cbs[i].checked){
-                                 flag = true;
-                                 break;
-                             }
+                        for (var i = 0; i < cbs.length; i++) {
+                            if (cbs[i].checked) {
+                                flag = true;
+                                break;
+                            }
                         }
-                        if(flag){
+                        if (flag) {
                             document.getElementById("SelectedForm").submit();
                         }
                     }
                 }
-
                 // 1.当点击第一个CheckBox时获取下面所有的CheckBox
                 document.getElementById("firstCB").onclick = function () {
                     // 2.获取下边列表中所有的CheckBox
@@ -122,7 +120,7 @@
                         <th>操作</th>
                     </tr>
 
-                    <c:forEach items="${users}" var="user" varStatus="s">
+                    <c:forEach items="${pb.list}" var="user" varStatus="s">
                         <tr>
                             <td><input type="checkbox" name="uid" value="${user.id}"></td>
                             <td>${s.count}</td>
@@ -146,22 +144,33 @@
                 <nav aria-label="Page navigation">
                     <ul class="pagination">
                         <li>
-                            <a href="#" aria-label="Previous">
+                            <a href="${pageContext.request.contextPath}/UserListByPageServlet?currentPage=${pb.currentPage-1}&rows=5"
+                               aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
+
+                        <c:forEach begin="1" end="${pb.totalPage}" var="i">
+                            <c:if test="${pb.currentPage == i}">
+                                <li class="active"><a
+                                        href="${pageContext.request.contextPath}/UserListByPageServlet?currentPage=${i}&rows=5">${i}</a>
+                                </li>
+                            </c:if>
+
+                            <c:if test="${pb.currentPage != i}">
+                                <li>
+                                    <a href="${pageContext.request.contextPath}/UserListByPageServlet?currentPage=${i}&rows=5">${i}</a>
+                                </li>
+                            </c:if>
+                        </c:forEach>
                         <li>
-                            <a href="#" aria-label="Next">
+                            <a href="${pageContext.request.contextPath}/UserListByPageServlet?currentPage=${pb.currentPage+1}&rows=5"
+                               aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
                         <span style="font-size: 25px;margin-left: 5px;">
-                    共16条记录，共4页
+                    共${pb.totalCount}条记录，共${pb.totalPage}页
                 </span>
 
                     </ul>

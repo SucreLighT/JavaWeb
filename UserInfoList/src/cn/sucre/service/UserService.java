@@ -1,5 +1,6 @@
 package cn.sucre.service;
 
+import cn.sucre.domain.PageBean;
 import cn.sucre.domain.User;
 
 import java.util.List;
@@ -51,4 +52,12 @@ public interface UserService {
 	 * @param uids
 	 */
 	void delSelectedUser(String[] uids);
+
+	/**
+	 * 分页查询
+	 * @param currentPage
+	 * @param rows
+	 * @return
+	 */
+	PageBean<User> findUserByPage(String currentPage, String rows);
 }

@@ -47,4 +47,18 @@ public interface UserDao {
 	 * @param user
 	 */
 	void updateUser(User user);
+
+	/**
+	 * 查询总记录数
+	 * @return
+	 */
+	int findTotalCount();
+
+	/**
+	 * 分页查询每页记录
+	 * @param start 当前页在数据库中起始索引
+	 * @param rows 每一页固定的记录数
+	 * @return
+	 */
+	List<User> findByPage(int start, int rows);
 }
