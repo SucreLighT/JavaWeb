@@ -7,6 +7,7 @@ import cn.sucre.domain.User;
 import cn.sucre.service.UserService;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author sucre
@@ -61,7 +62,7 @@ public class UserServiceImpl  implements UserService {
     }
 
     @Override
-    public PageBean<User> findUserByPage(String currentPage, String rows) {
+    public PageBean<User> findUserByPage(String currentPage, String rows, Map<String, String[]> condition) {
         int _currentPage = Integer.parseInt(currentPage);
         int _rows = Integer.parseInt(rows);
 
@@ -72,7 +73,7 @@ public class UserServiceImpl  implements UserService {
         }
 
         // 调用dao查询总记录数
-        int totalCount = dao.findTotalCount();
+        int totalCount = dao.findTotalCount(condition);
         // 计算总页码
         int totalPage = (totalCount%_rows) == 0 ? (totalCount/_rows) : (totalCount/_rows) + 1;
 
@@ -84,7 +85,7 @@ public class UserServiceImpl  implements UserService {
         // 调用dao查询list集合
         // 计算当前页面记录在数据库中对应的开始索引
         int start = (_currentPage - 1)*_rows;
-        List<User> list = dao.findByPage(start,_rows);
+        List<User> list = dao.findByPage(start,_rows,condition);
 
         // 创建PageBean对象
         PageBean<User> pb = new PageBean<User>();
