@@ -5,12 +5,14 @@ import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
 /**
- * @description:
+ * @description: 浏览器直接访问（request）或者转发访问（forward）index时都会执行过滤器
  * @author: sucre
  * @date: 2020/07/09
  * @time: 15:05
  */
-@WebFilter(urlPatterns = "/*")
+
+
+@WebFilter(urlPatterns = "/index.jsp",dispatcherTypes = {DispatcherType.REQUEST,DispatcherType.FORWARD})
 public class Demo1Filter implements Filter {
 	@Override
 	public void destroy() {
