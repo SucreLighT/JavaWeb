@@ -5,26 +5,22 @@ import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
 /**
- * @description: 浏览器直接访问（request）或者转发访问（forward）index时都会执行过滤器
+ * @description:
  * @author: sucre
- * @date: 2020/07/09
- * @time: 15:05
+ * @date: 2020/07/10
+ * @time: 09:03
  */
-
-
 @WebFilter(urlPatterns = "/index.jsp",dispatcherTypes = {DispatcherType.REQUEST,DispatcherType.FORWARD})
-public class Demo1Filter implements Filter {
+public class Demo2Filter implements Filter {
 	@Override
 	public void destroy() {
 	}
 
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-
-		System.out.println("过滤器1执行...");
-		// 过滤器放行
+		System.out.println("过滤器2执行...");
 		chain.doFilter(req, resp);
-		System.out.println("过滤器1放行...");
+		System.out.println("过滤器2放行...");
 	}
 
 	@Override
