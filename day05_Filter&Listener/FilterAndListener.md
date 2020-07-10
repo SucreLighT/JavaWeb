@@ -1,4 +1,4 @@
-## Filter
+## Filter 过滤器
 1. 过滤器：当客户端访问服务器资源时，过滤器可以将请求拦截下来，并完成一些特殊的功能。
     + 一般用于完成一些通用的功能：登录验证，设置编码，敏感字符过滤等。
 2. 使用步骤：创建Filter类，复写其中的三个方法，使用注解设置拦截路径和拦截方式。
@@ -26,3 +26,16 @@
    	    1. 注解中配置：按照类名的字符串比较规则比较，值小的先执行
    		    + 如： AFilter 和 BFilter，AFilter就先执行了。
    		2. web.xml配置： <filter-mapping>谁定义在上边，谁先执行。
+   		
+   		
+ ## Listener 监听器
+ 1. 时间监听机制
+    + 事件：一件事情
+    + 事件源 ：事件发生的地方
+    + 监听器 ：一个对象
+    + 注册监听：将事件、事件源、监听器绑定在一起。 当事件源上发生某个事件后，执行监听器代码.
+ 2. 使用步骤
+    + 新建listener类
+    + 注解配置@WebListener()
+    + void contextDestroyed(ServletContextEvent sce) ：ServletContext对象被销毁之前会调用该方法
+    + void contextInitialized(ServletContextEvent sce) ：ServletContext对象创建后会调用该方法
