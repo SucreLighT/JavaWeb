@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/day03_CookieAndSession/day03_CookieAndSession.iml" filepath="$PROJECT_DIR$/day03_CookieAndSession/day03_CookieAndSession.iml" />
       <module fileurl="file://$PROJECT_DIR$/day04_JSP&amp;EL&amp;JSTL/day04_JSP&amp;EL&amp;JSTL.iml" filepath="$PROJECT_DIR$/day04_JSP&amp;EL&amp;JSTL/day04_JSP&amp;EL&amp;JSTL.iml" />
       <module fileurl="file://$PROJECT_DIR$/day05_Filter&amp;Listener/day05_Filter&amp;Listener.iml" filepath="$PROJECT_DIR$/day05_Filter&amp;Listener/day05_Filter&amp;Listener.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day06_JQuery/day06_JQuery.iml" filepath="$PROJECT_DIR$/day06_JQuery/day06_JQuery.iml" />
     </modules>
   </component>
 </project>

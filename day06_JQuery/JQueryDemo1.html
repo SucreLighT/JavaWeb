@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>JQueryDemo1</title>
+        <script src="js/jquery-3.5.1.min.js"></script>
+    </head>
+    <body>
+        <div id="div1">div1...</div>
+        <div id="div2">div2...</div>
+
+
+        <script>
+
+            // 1.通过js方式获取元素对象
+            var divs = document.getElementsByTagName("div");
+            alert(divs.length);
+            //当做数组使用，修改其中的标签体内容
+            for (var i = 0; i < divs.length ; i++) {
+                divs[i].innerHTML = "aaa";
+            }
+
+
+            // 2.通过jq方式获取元素对象
+            var $divs = $("div");
+            alert($divs.length);
+
+            //当做数组使用
+            $divs.html("bbb");
+
+            // 3.js与jq获取对象的转换
+            for (var i = 0; i < divs.length ; i++) {
+                $(divs[i]).html("ccc");
+            }
+
+            $divs[0].innerHTML = "ddd";
+            $divs.get(1).innerHTML = "ddd";
+
+
+        </script>
+    </body>
+</html>
