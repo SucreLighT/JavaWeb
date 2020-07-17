@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>事件绑定、入口函数、样式控制</title>
+        <script src="js/jquery-3.5.1.min.js"></script>
+    </head>
+    <body>
+        <div id="div1">div1...</div>
+        <div id="div2">div2...</div>
+        <input type="button" value="点击" id="b1">
+
+        <script>
+            //1.事件绑定，通过选取html元素，对元素进行操作
+            $("#b1").click(function () {
+                alert("点击按钮！");
+            });
+
+            //2.入口函数
+            $(document).ready(function () {
+                alert("加载完成！")
+            });
+
+            //3.样式控制
+            $("#div1").css("backgroundColor","pink");
+        </script>
+    </body>
+</html>
