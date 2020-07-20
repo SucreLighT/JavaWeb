@@ -96,7 +96,7 @@
         3. toggleClass():对被选元素进行添加/删除类的切换操作
             * toggleClass("one"): 判断如果元素对象上存在class="one"，则将属性值one删除掉，如果元素对象上不存在class="one"，则添加。
         4. css():设置或返回样式属性
-3. CRUD操作，  
+3. CRUD操作
     可以传递多个参数CRUD多个元素:
     ```
       var txt1="<p>文本。</p>";              // 使用 HTML 标签创建文本
@@ -125,3 +125,25 @@
         * 对象.remove():删除被选元素（及其子元素）
     10. empty():清空元素的所有后代元素。
         * 对象.empty():从被选元素中删除子元素，但是保留当前对象以及其属性节点
+        
+### JQuery动画
+三种方式显示和隐藏元素
+1. 默认显示和隐藏方式
+    + show([speed,[easing],[fn]])
+        1. speed：动画的速度。三个预定义的值("slow","normal", "fast")或表示动画时长的毫秒数值(如：1000)
+        2. easing：用来指定切换效果，默认是"swing"，可用参数"linear"
+            * swing：动画执行时效果是 先慢，中间快，最后又慢
+            * linear：动画执行时速度是匀速的
+        3. fn：在动画完成时执行的函数，每个元素执行一次。
+    + hide([speed,[easing],[fn]])
+    + toggle([speed],[easing],[fn])
+
+2. 滑动显示和隐藏方式
+    1. slideDown([speed],[easing],[fn])
+    2. slideUp([speed,[easing],[fn]])
+    3. slideToggle([speed],[easing],[fn])
+
+3. 淡入淡出显示和隐藏方式
+    1. fadeIn([speed],[easing],[fn])
+    2. fadeOut([speed],[easing],[fn])
+    3. fadeToggle([speed,[easing],[fn]])
