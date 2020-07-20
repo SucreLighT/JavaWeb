@@ -73,3 +73,55 @@
       		* 语法： :checked 获得单选/复选框选中的元素
       	4. 选中选择器 
       		* 语法： :selected 获得下拉框选中的元素
+      		
+### JQuery操作HTML-DOM操作
+1. 内容操作,**设置内容时，直接在方法中传入字符串值即可**
+    1. html(): 获取/设置元素的标签体内容   <a><font>内容</font></a>  --> <font>内容</font>
+	2. text(): 获取/设置元素的标签体纯文本内容   <a><font>内容</font></a> --> 内容
+	3. val()： 获取/设置元素的value属性值
+	
+2. 属性操作
+    1. 通用属性操作
+        1. attr(): 获取/设置元素的属性
+        2. removeAttr():删除属性
+        3. prop():获取/设置元素的属性
+        4. removeProp():删除属性
+        * **attr和prop区别？**
+            1. 如果操作的是元素的固有属性，则建议使用prop
+            2. 如果操作的是元素自定义的属性，则建议使用attr
+            3. **下拉列表的selected属性以及复选框的checked属性只能用prop**
+    2. 对CSS的class属性操作
+        1. addClass():向被选元素添加一个或多个类
+        2. removeClass(): 从被选元素删除一个或多个类
+        3. toggleClass():对被选元素进行添加/删除类的切换操作
+            * toggleClass("one"): 判断如果元素对象上存在class="one"，则将属性值one删除掉，如果元素对象上不存在class="one"，则添加。
+        4. css():设置或返回样式属性
+3. CRUD操作，  
+    可以传递多个参数CRUD多个元素:
+    ```
+      var txt1="<p>文本。</p>";              // 使用 HTML 标签创建文本
+      var txt2=$("<p></p>").text("文本。");  // 使用 jQuery 创建文本
+      var txt3=document.createElement("p");
+      txt3.innerHTML="文本。";               // 使用 DOM 创建文本 text with DOM
+      $("body").append(txt1,txt2,txt3);        // 追加新元素
+    ```
+    1. append():父元素将子元素追加到末尾
+        * 对象1.append(对象2): 将对象2添加到对象1元素内部，并且在末尾
+    2. prepend():父元素将子元素追加到开头
+        * 对象1.prepend(对象2):将对象2添加到对象1元素内部，并且在开头
+    3. appendTo():
+        * 对象1.appendTo(对象2):将对象1添加到对象2内部，并且在末尾
+    4. prependTo()：
+        * 对象1.prependTo(对象2):将对象1添加到对象2内部，并且在开头
+    5. after():添加元素到元素后边
+        * 对象1.after(对象2)： 将对象2添加到对象1后边。对象1和对象2是兄弟关系
+    6. before():添加元素到元素前边
+        * 对象1.before(对象2)： 将对象2添加到对象1前边。对象1和对象2是兄弟关系
+    7. insertAfter()
+        * 对象1.insertAfter(对象2)：将对象2添加到对象1后边。对象1和对象2是兄弟关系
+    8. insertBefore()
+        * 对象1.insertBefore(对象2)： 将对象2添加到对象1前边。对象1和对象2是兄弟关系
+    9. remove():移除元素
+        * 对象.remove():删除被选元素（及其子元素）
+    10. empty():清空元素的所有后代元素。
+        * 对象.empty():从被选元素中删除子元素，但是保留当前对象以及其属性节点
