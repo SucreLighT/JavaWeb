@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/jquery-3.5.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            // 1.JS遍历
+            var cities = $("#city li");
+            // for (var i = 0; i < cities.length; i++) {
+            //     alert(i + cities[i].innerHTML);
+            // }
+
+            // 2.JQ遍历方式一
+            // cities.each(function (index,element) {
+            //     if("上海" == $(element).html()){
+            //         //回调函数返回false相当于break，返回true相当于continue
+            //         return false;
+            //     }
+            //     alert(index + element.innerHTML);
+            // });
+
+            // 3.JQ遍历方式二
+            // $.each(cities,function (index,element) {
+            //     if("上海" == $(element).html()){
+            //         return true;
+            //     }
+            //     alert(index + element.innerHTML);
+            // });
+
+            // 4.JQ遍历方式三
+            for(li of cities){
+                alert($(li).html());
+            }
+
+        });
+    </script>
+</head>
+<body>
+<ul id="city">
+    <li>北京</li>
+    <li>上海</li>
+    <li>天津</li>
+    <li>重庆</li>
+</ul>
+</body>
+</html>

@@ -97,7 +97,7 @@
             * toggleClass("one"): 判断如果元素对象上存在class="one"，则将属性值one删除掉，如果元素对象上不存在class="one"，则添加。
         4. css():设置或返回样式属性
 3. CRUD操作
-    可以传递多个参数CRUD多个元素:
+    **可以传递多个参数CRUD多个元素**:
     ```
       var txt1="<p>文本。</p>";              // 使用 HTML 标签创建文本
       var txt2=$("<p></p>").text("文本。");  // 使用 jQuery 创建文本
@@ -147,3 +147,19 @@
     1. fadeIn([speed],[easing],[fn])
     2. fadeOut([speed],[easing],[fn])
     3. fadeToggle([speed,[easing],[fn]])
+    
+    
+### Jquery遍历
+1. js的遍历方式
+        * for(初始化值;循环结束条件;步长)
+2. jq的遍历方式
+    1. jq对象.each(callback)
+        1. 语法：jquery对象.each(function(index,element){});  
+            * index:就是元素在集合中的索引
+            * element：就是集合中的每一个元素对象
+            * this：集合中的每一个元素对象
+        2. 回调函数返回值：
+            * true:如果当前function返回为false，则结束循环(break)。
+            * false:如果当前function返回为true，则结束本次循环，继续下次循环(continue)
+    2. $.each(object, [callback])
+    3. for..of方式，jquery 3.0 版本之后提供的方式，类似于foreach循环: for(元素对象 of 容器对象)
