@@ -105,8 +105,31 @@
         * json对象.键名
         * json对象["键名"]
         * 数组对象[索引]
-      
-3. JSON 与 XML
+ 
+3. JSON数据和Java对象的相互转换
+    * Java对象转换JSON
+        1. 使用步骤：
+            1. 导入jackson的相关jar包
+            2. 创建Jackson核心对象 ObjectMapper
+            3. 调用ObjectMapper的相关方法进行转换
+                1. 转换方法：
+                    * writeValue(参数1，obj):
+                        参数1：
+                            File：将obj对象转换为JSON字符串，并保存到指定的文件中
+                            Writer：将obj对象转换为JSON字符串，并将json数据填充到字符输出流中
+                            OutputStream：将obj对象转换为JSON字符串，并将json数据填充到字节输出流中
+                    * writeValueAsString(obj):将对象转为json字符串
+                2. 注解：
+                    1. @JsonIgnore：排除属性，不会被转换成字符串。
+                    2. @JsonFormat：属性格式化，设置在属性定义的上一行。
+                        * @JsonFormat(pattern = "yyyy-MM-dd")
+    * JSON转为Java对象
+        1. 导入jackson的相关jar包
+        2. 创建Jackson核心对象 ObjectMapper
+        3. 调用ObjectMapper的相关方法进行转换
+            * readValue(json字符串数据,Class)  
+            
+4. JSON 与 XML
    * JSON 与 XML 的相同之处：
        JSON 和 XML 数据都是 "自我描述" ，都易于理解。
        JSON 和 XML 数据都是有层次的结构
