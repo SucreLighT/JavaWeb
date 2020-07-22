@@ -143,3 +143,10 @@
         
        JSON.parse(): 将一个 JSON 字符串转换为 JavaScript 对象。
        JSON.stringify(): 于将 JavaScript 值转换为 JSON 字符串
+       
+## 案例
+* 校验用户名是否存在
+1. 服务器响应的数据，在客户端使用时，要想当做json数据格式使用。有两种解决方案：
+    1. $.get(type):将最后一个参数type指定为"json"
+    2. 在服务器端设置MIME类型
+        response.setContentType("application/json;charset=utf-8");
