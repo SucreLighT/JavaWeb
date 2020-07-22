@@ -84,5 +84,39 @@
 
     
 ## Json
-
-
+1. 概念：JSON=JavaScript Object Notation(JavaScript 对象表示法)
+    * JSON是存储和交换文本信息的语法，类似 XML，但比XML更小、更快，更易解析。
+    
+2. 语法
+    1. 基本语法，JSON 语法是 JavaScript 对象表示语法的子集。
+        * 数据在名称/值对中：json数据是由键值对构成的
+            * 键用引号(单双都行)引起来，也可以不使用引号
+            * 值得取值类型：
+                1. 数字（整数或浮点数）
+                2. 字符串（在双引号中）
+                3. 逻辑值（true 或 false）
+                4. 数组（在方括号中）	{"persons":[{},{}]}
+                5. 对象（在花括号中） {"address":{"province"："陕西"....}}
+                6. null
+        * 数据由逗号分隔：多个键值对由逗号分隔
+        * 花括号保存对象：使用{}定义json格式
+        * 方括号保存数组：[]
+    2. 获取数据:
+        * json对象.键名
+        * json对象["键名"]
+        * 数组对象[索引]
+      
+3. JSON 与 XML
+   * JSON 与 XML 的相同之处：
+       JSON 和 XML 数据都是 "自我描述" ，都易于理解。
+       JSON 和 XML 数据都是有层次的结构
+       JSON 和 XML 数据可以被大多数编程语言使用
+   * JSON 与 XML 的不同之处：
+       JSON 不需要结束标签
+       JSON 更加简短
+       JSON 读写速度更快
+       JSON 可以使用数组
+   * 最大的不同是：XML 需要使用 XML 解析器来解析，JSON 可以使用标准的 JavaScript 函数来解析。
+        
+       JSON.parse(): 将一个 JSON 字符串转换为 JavaScript 对象。
+       JSON.stringify(): 于将 JavaScript 值转换为 JSON 字符串
