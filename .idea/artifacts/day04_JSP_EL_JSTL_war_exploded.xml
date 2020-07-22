@@ -7,6 +7,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="day04_JSP&amp;EL&amp;JSTL" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../../java-jar/standard-1.1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../java-jar/jstl-1.2.jar" />
+        </element>
       </element>
     </root>
   </artifact>
