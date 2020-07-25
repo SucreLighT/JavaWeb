@@ -34,8 +34,15 @@
     2. 启动：
         * redis-server.exe redis.windows.conf 启动服务器
         * redis-cli.exe -h 127.0.0.1 -p 6379 启动客户端
-        
-4. 数据类型
+4. redis的应用场景
+    * 缓存（数据查询、短连接、新闻内容、商品内容等等）
+    * 聊天室的在线好友列表
+    * 任务队列。（秒杀、抢购、12306等等）
+    * 应用排行榜
+    * 网站访问统计
+    * 数据过期处理（可以精确到毫秒
+    * 分布式集群架构中的session分离   
+5. 数据类型
     1. 字符串类型 string
         * 存储： `set key value` `set username zhangsan`
         * 获取： `get key`  `get username` :"zhangsan"
@@ -76,12 +83,12 @@
         * 删除：
             * `zrem key value`
             * `zrem mysort lisi`
-5. 通用命令
+6. 通用命令
     1. keys * : 查询所有的键
     2. type key ： 获取键对应的value的类型
     3. del key：删除指定的key value
     
-6. Redis数据库的持久化
+7. Redis数据库的持久化
     1. RDB：默认方式，不需要进行配置，默认就使用这种机制
         * 在redis.windwos.conf文件中设置`save 900 1`表示after 900 sec (15 min) if at least 1 key changed
         * 在一定的间隔时间中，检测key的变化情况，然后持久化数据，在redis目录下保存为dump.rdb文件               				
