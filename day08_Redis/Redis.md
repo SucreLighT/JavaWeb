@@ -102,5 +102,10 @@
     //3. 关闭连接
     jedis.close();
       ```
+
 2. 直接调用jedis对象中的方法操作各类数据即可。
 
+3. Jedis连接池
+    1. 创建JedisPool连接池对象
+    2. 调用方法 getResource()方法获取Jedis连接
+    **注意**：3.0以上jedis与common pool2.3包不匹配
