@@ -6,6 +6,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="day07_Ajax&amp;Json" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="module" name="JUnit5.4" module-name="day07_Ajax&amp;Json" />
+        </element>
       </element>
       <element id="javaee-facet-resources" facet="day07_Ajax&amp;Json/web/Web" />
     </root>

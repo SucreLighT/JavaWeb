@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/day05_Filter&amp;Listener/day05_Filter&amp;Listener.iml" filepath="$PROJECT_DIR$/day05_Filter&amp;Listener/day05_Filter&amp;Listener.iml" />
       <module fileurl="file://$PROJECT_DIR$/day06_JQuery/day06_JQuery.iml" filepath="$PROJECT_DIR$/day06_JQuery/day06_JQuery.iml" />
       <module fileurl="file://$PROJECT_DIR$/day07_Ajax&amp;Json/day07_Ajax&amp;Json.iml" filepath="$PROJECT_DIR$/day07_Ajax&amp;Json/day07_Ajax&amp;Json.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day08_Redis/day08_Redis.iml" filepath="$PROJECT_DIR$/day08_Redis/day08_Redis.iml" />
     </modules>
   </component>
 </project>
